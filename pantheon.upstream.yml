@@ -30,12 +30,12 @@ protected_web_paths:
   - /profiles/README.txt
   - /sites/README.txt
   - /themes/README.txt
-  workflows:
-    deploy_product:
-      after:
-        - type: webphp
-          description: 'Install Drupal'
-          script: private/scripts/deploy_product/drush_site_install.php
-        - type: webphp
-          description: 'Notify KWALL Sites'
-          script: private/scripts/deploy_product/firebase_notice.php
+workflows:
+  deploy_product:
+    after:
+      - type: webphp
+        description: 'Install Drupal'
+        script: private/scripts/deploy_product/drush_site_install.php
+      - type: webphp
+        description: 'Notify KWALL Sites'
+        script: private/scripts/deploy_product/firebase_notice.php
